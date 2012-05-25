@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="css/normalize.css">
     <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
-<body>
+<body tabindex="0">
     <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
     <div id="container">
         <header>
             <h1>Pomodoro Timer</h1>
         </header>
         <div role="main">
-            <div id="state" tabindex="0"><span class="value">Stopped</span> <span class="info">(press ENTER to start/stop)</span></div>
+            <div id="state"><span class="value">Stopped</span> <span class="info">(press ENTER to start/stop)</span></div>
             <div id="timer">00:00</div>
             <div id="pomodoro-count">Pomodoro: <span class="value">0</span> <span class="info">(rest after 4 pomodoros)</span></div>
             <fieldset>
@@ -35,6 +35,15 @@
                 <div>
                     <label for="rest"><span>Rest:</span> <input id="rest" type="number" min="20" max="50" value="25" step="5" autocomplete="true" /> minutes</label>
                 </div>
+<!--                <div>
+                    <label for="work"><span>Work:</span> <input id="work" type="number" min="0" max="50" value="1" step="5" autocomplete="true"/> minutes</label>                    
+                </div>
+                <div>
+                    <label for="break"><span>Break:</span> <input id="break" type="number" min="0" max="15" value="1" step="1" autocomplete="true" /> minutes</label>
+                </div>
+                <div>
+                    <label for="rest"><span>Rest:</span> <input id="rest" type="number" min="0" max="50" value="1" step="5" autocomplete="true" /> minutes</label>
+                </div>-->
             </fieldset>
         </div>
         <footer>

@@ -4,7 +4,7 @@
     var timerElm = $('#timer'),
         stateElm = $('#state .value'),
         pomoCountElm = $('#pomodoro-count .value'),
-        notifySound = new Audio("/resources/notify.wav"),
+        notifySound = new Audio("/resources/beep1.wav"),
         state = {},
         countdown,
         updateState,
@@ -19,29 +19,32 @@
         timeoutId: undefined
     };
 
-    setTarget = function () {
-        state.target = $('#' + state.type).val() * 60;
+    setTarget = function () {        
+        state.time = state.target = $('#' + state.type).val() * 60;
     };
 
     // (re)start the counter and update the display
     countdown = function () {
         var mins, secs;
+
         // restart timer and update time
         state.timeoutId = window.setTimeout(countdown, 1000);
-        state.time += 1;
 
+        // update time
+        state.time -= 1;
+
+        // calculate minutes and secs
         mins = Math.floor(state.time / 60);
         secs = state.time % 60;
 
-        // update rest of UI if needed
-        if (state.time > state.target) {
-            state.time = 0;
+        // prettify for output
+        mins = mins < 10 ? "0" + mins : mins;
+        secs = secs < 10 ? "0" + secs : secs;
+        timerElm.text(mins + ":" + secs);
+
+        // reset countdown and update rest of UI if timer is done
+        if (state.time === 0) {
             updateState();
-        } else {
-            // prettify for output
-            mins = mins < 10 ? "0" + mins : mins;
-            secs = secs < 10 ? "0" + secs : secs;
-            timerElm.text(mins + ":" + secs);
         }
     };
 
@@ -55,14 +58,14 @@
                 stateElm.text("Break");
                 $('h1, #state, #timer, #pomodoro-count')
                     .toggleClass('break')
-                    .effect("pulsate", { times: 4 }, 500);
+                    .effect("pulsate", { times: 5 }, 400);
             } else {
                 state.pomocount = 0;
                 state.type = 'rest';
                 stateElm.text("Rest");
                 $('h1, #state, #timer, #pomodoro-count')
                     .toggleClass('rest')
-                    .effect("pulsate", { times: 4 }, 500);
+                    .effect("pulsate", { times: 5 }, 400);
             }
         } else {
             state.pomocount += 1;
