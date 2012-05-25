@@ -523,19 +523,20 @@ html {
 
 body {
   margin: 0 auto;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 #container
 {
-    overflow: hidden;
-    min-width: 300px;
+    min-width: 280px;
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
     cursor: pointer;
+
 }
 
 h1
@@ -545,11 +546,6 @@ h1
     overflow: hidden;
     white-space: nowrap;
     margin: 20px auto;
-}
-
-fieldset {
-  margin: 20px auto;
-  max-width: 250px;
 }
 
 #timer {
@@ -583,9 +579,12 @@ fieldset {
 
 fieldset
 {
+    border-color: #999;
+    color: #999;
     font-size: 75%;
     margin: 20px auto;
     padding: 5px;
+    max-width: 250px;
 }
 
 fieldset div
@@ -608,6 +607,7 @@ fieldset label span
 footer {
   font-size: 75%;
   margin: 20px auto;
+  padding-bottom: 20px;
 }
 
 #timer.break
