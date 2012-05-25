@@ -12,7 +12,7 @@
         toogleTimer;
 
     state = {
-        time: 1495,
+        time: 0,
         target: 0,
         type: undefined,
         pomocount: 0,
