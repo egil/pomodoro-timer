@@ -510,30 +510,117 @@ html {
 }
 
 body {
-  width: 400px;
-  margin: 0 auto;
+  margin: 0 auto;  
+}
+
+#container 
+{
+    min-width: 350px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0; 
+}
+
+h1 
+{
+    color: #ccc;
+    font-size: 600%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 20px auto;
 }
 
 fieldset {
-  margin-top: 20px;
-
+  margin: 20px auto;
+  max-width: 250px;
 }
 
-#timer, #state {
+#timer {
   font-size: 400%;
+  margin: 20px auto;
 }
 
-footer {
-  font-size: 80%;
+#state {
+  font-size: 300%;
+  color: #999;
+  margin: 20px auto;
+}
+
+.info
+{
+    font-size: 25%;
+    display: block;
+}
+
+#pomodoro-count .info
+{
+    font-size: 50%;
+}
+
+#pomodoro-count 
+{
+    font-size: 150%;
+    color: #999;
+    margin: 20px auto;
+}
+
+fieldset 
+{
+    font-size: 75%;
+    margin: 20px auto;
+    padding: 5px;
 }
 
 fieldset div 
 {
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 fieldset input 
 {
     width: 40px;
-    margin-
+}
+
+fieldset label span 
+{
+    display: inline-block;
+    width: 50px;
+    text-align: right;
+}
+
+footer {
+  font-size: 75%;
+  margin: 20px auto;
+}
+
+#timer.break 
+{
+    color: #47db3c;
+}
+
+h1.break 
+{
+    color: #bafdb5;
+}
+
+#state.break, #pomodoro-count.break 
+{
+    color: #85ee7d;
+}
+
+#timer.rest 
+{
+    color: #2030c8;
+}
+
+h1.rest 
+{
+    color: #7f89ea;
+}
+
+#state.rest, #pomodoro-count.rest 
+{
+    color: #656ec8;
 }

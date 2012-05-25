@@ -16,34 +16,35 @@
 </head>
 <body>
     <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-    <header>
-        <h1>Pomodoro Timer</h1>
-    </header>
-    <div role="main">
-        <div id="state">Stopped</div>
-        <div id="timer">00:00</div>
-        <div id="pomodoro-count">0</div>
-        <fieldset>
-            <legend>Options</legend>
-            <div>
-                <label for="work"><span>Work:</span> <input id="work" type="number" min="1" max="50" value="1" step="1" autocomplete="true"/> minutes</label>
-                <!-- <input id="work" type="range" min="20" max="50" value="25" step="5" autocomplete="true"> -->
-            </div>
-            <div>
-                <label for="break"><span>Break:</span> <input id="break" type="number" min="1" max="10" value="1" step="3" autocomplete="true" /> minutes</label>
-            </div>
-            <div>
-                <label for="rest"><span>Rest:</span> <input id="rest" type="number" min="20" max="50" value="25" step="5" autocomplete="true" /> minutes</label>
-            </div>
-        </fieldset>
+    <div id="container">
+        <header>
+            <h1>Pomodoro Timer</h1>
+        </header>
+        <div role="main">
+            <div id="state" tabindex="0"><span class="value">Stopped</span> <span class="info">(press ENTER to start/stop)</span></div>
+            <div id="timer">00:00</div>
+            <div id="pomodoro-count">Pomodoro: <span class="value">0</span> <span class="info">(rest after 4 pomodoros)</span></div>
+            <fieldset>
+                <legend>Options</legend>
+                <div>
+                    <label for="work"><span>Work:</span> <input id="work" type="number" min="20" max="50" value="25" step="5" autocomplete="true"/> minutes</label>                    
+                </div>
+                <div>
+                    <label for="break"><span>Break:</span> <input id="break" type="number" min="1" max="15" value="5" step="1" autocomplete="true" /> minutes</label>
+                </div>
+                <div>
+                    <label for="rest"><span>Rest:</span> <input id="rest" type="number" min="20" max="50" value="25" step="5" autocomplete="true" /> minutes</label>
+                </div>
+            </fieldset>
+        </div>
+        <footer>
+            <p>By <a href="http://egilhansen.com/" title="Visit Egil Hansen's website">Egil Hansen</a>.</p>
+        </footer>
     </div>
-    <footer>
-        <p>By <a href="http://egilhansen.com/" title="Visit Egil Hansen's website">Egil Hansen</a>.</p>
-    </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>        window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-    <script>        window.jQuery || document.write('<script src="js/libs/jquery-ui-1.7.2.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-ui-1.7.2.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
 </body>
