@@ -267,8 +267,6 @@ AddType text/x-vcard                        vcf
 
 </IfModule>
 
-
-
 # ----------------------------------------------------------------------
 # ETag removal
 # ----------------------------------------------------------------------
@@ -298,8 +296,6 @@ FileETag None
 # BrowserMatch "Opera" !brokenvary
 # SetEnvIf brokenvary 1 force-no-vary
 
-
-
 # ----------------------------------------------------------------------
 # Cookie setting from iframes
 # ----------------------------------------------------------------------
@@ -312,63 +308,6 @@ FileETag None
 #     Header set P3P "policyref=\"/w3c/p3p.xml\", CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\""
 #   </Location>
 # </IfModule>
-
-
-
-# ----------------------------------------------------------------------
-# Start rewrite engine
-# ----------------------------------------------------------------------
-
-# Turning on the rewrite engine is necessary for the following rules and features.
-# FollowSymLinks must be enabled for this to work.
-
-<IfModule mod_rewrite.c>
-  Options +FollowSymlinks
-  RewriteEngine On
-</IfModule>
-
-
-
-# ----------------------------------------------------------------------
-# Suppress or force the "www." at the beginning of URLs
-# ----------------------------------------------------------------------
-
-# The same content should never be available under two different URLs - especially not with and
-# without "www." at the beginning, since this can cause SEO problems (duplicate content).
-# That's why you should choose one of the alternatives and redirect the other one.
-
-# By default option 1 (no "www.") is activated. Remember: Shorter URLs are sexier.
-# no-www.org/faq.php?q=class_b
-
-# If you rather want to use option 2, just comment out all option 1 lines
-# and uncomment option 2.
-# IMPORTANT: NEVER USE BOTH RULES AT THE SAME TIME!
-
-# ----------------------------------------------------------------------
-
-# Option 1:
-# Rewrite "www.example.com -> example.com"
-
-<IfModule mod_rewrite.c>
-  RewriteCond %{HTTPS} !=on
-  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
-</IfModule>
-
-# ----------------------------------------------------------------------
-
-# Option 2:
-# To rewrite "example.com -> www.example.com" uncomment the following lines.
-# Be aware that the following rule might not be a good idea if you
-# use "real" subdomains for certain parts of your website.
-
-# <IfModule mod_rewrite.c>
-#   RewriteCond %{HTTPS} !=on
-#   RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
-#   RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-# </IfModule>
-
-
 
 # ----------------------------------------------------------------------
 # Built-in filename-based cache busting
