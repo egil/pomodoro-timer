@@ -52,28 +52,24 @@
     updateState = function (userAction) {
         // what kind of timer shoud we use now?
         if (state.type === 'work') {
-            if (state.pomocount < 4) {
-                // increment pomodoro counter
-                state.type = 'break';
-                stateElm.text("Break");
-                $('h1, #state, #timer, #pomodoro-count')
-                    .toggleClass('break')
-                    .effect("pulsate", { times: 5 }, 400);
-            } else {
-                state.pomocount = 0;
+            if (state.pomocount % 4 === 0) {
                 state.type = 'rest';
                 stateElm.text("Rest");
-                $('h1, #state, #timer, #pomodoro-count')
-                    .toggleClass('rest')
-                    .effect("pulsate", { times: 5 }, 400);
+            } else {
+                state.type = 'break';
+                stateElm.text("Break");
             }
         } else {
             state.pomocount += 1;
             pomoCountElm.text(state.pomocount);
             state.type = 'work';
             stateElm.text("Working");
-            $('h1, #state, #timer, #pomodoro-count').removeClass();
         }
+
+        // animate text
+        $('#state, #timer, #pomodoro-count')
+                    .toggleClass(state.type)
+                    .effect("pulsate", { times: 5 }, 400);
 
         // play sound when ever state is changed
         if (!userAction) {
@@ -102,9 +98,6 @@
 
         $('fieldset input').on('change', function (e) {
             setTarget();
-        }).on('click', function (e) {
-            e.stopPropagation();
-            e.stopImmediatePropagation();
         });
 
         $('body').on('keypress', function (e) {
@@ -115,7 +108,7 @@
             }
         });
 
-        $('#container').on('click', function (e) {
+        $('#state').on('click', function (e) {
             toogleTimer();
         });
     });

@@ -557,6 +557,12 @@ h1
   font-size: 300%;
   color: #999;
   margin: 20px auto;
+  max-width: 250px;
+}
+
+#state:hover
+{
+    color: #333;
 }
 
 .info
@@ -614,29 +620,18 @@ footer {
 {
     color: #47db3c;
 }
-/*
-h1.break
-{
-    color: #bafdb5;
-}
 
-#state.break, #pomodoro-count.break
+#state.break
 {
     color: #85ee7d;
 }
-*/
+
 #timer.rest
 {
     color: #2030c8;
 }
-/*
-h1.rest
-{
-    color: #7f89ea;
-}
 
-#state.rest, #pomodoro-count.rest
+#state.rest
 {
     color: #656ec8;
 }
-*/
