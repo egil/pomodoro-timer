@@ -4,6 +4,7 @@
     var timerElm = $('#timer'),
         stateElm = $('#state .value'),
         pomoCountElm = $('#pomodoro-count .value'),
+        notifySound = new Audio("/resources/notify.wav"),
         state = {},
         countdown,
         updateState,
@@ -11,9 +12,9 @@
         toogleTimer;
 
     state = {
-        time: 0,
+        time: 1495,
         target: 0,
-        type: '',
+        type: undefined,
         pomocount: 0,
         timeoutId: undefined
     };
@@ -45,7 +46,7 @@
     };
 
     // update the interface
-    updateState = function () {
+    updateState = function (userAction) {
         // what kind of timer shoud we use now?
         if (state.type === 'work') {
             if (state.pomocount < 4) {
@@ -71,13 +72,18 @@
             $('h1, #state, #timer, #pomodoro-count').removeClass();
         }
 
+        // play sound when ever state is changed
+        if (!userAction) {
+            notifySound.play();
+        }
+
         // update target time
         setTarget();
     };
 
     toogleTimer = function () {
         // only on first start
-        if (state.type === '') { updateState(); }
+        if (state.type === undefined) { updateState(true); }
 
         // test if counting down, if so, pause, otherwise start
         if (typeof state.timeoutId == "number") {
@@ -91,7 +97,7 @@
     $(document).ready(function () {
         setTarget();
 
-        $('fieldset input').on('change', function (e) {          
+        $('fieldset input').on('change', function (e) {
             setTarget();
         }).on('click', function (e) {
             e.stopPropagation();

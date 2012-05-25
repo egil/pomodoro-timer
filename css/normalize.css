@@ -511,11 +511,13 @@ html {
 
 body {
   margin: 0 auto;  
+  overflow: hidden;
 }
 
 #container 
 {
-    min-width: 350px;
+    overflow: hidden;
+    min-width: 300px;
     position: absolute;
     top: 0;
     right: 0;
@@ -599,7 +601,7 @@ footer {
 {
     color: #47db3c;
 }
-
+/*
 h1.break 
 {
     color: #bafdb5;
@@ -609,12 +611,12 @@ h1.break
 {
     color: #85ee7d;
 }
-
+*/
 #timer.rest 
 {
     color: #2030c8;
 }
-
+/*
 h1.rest 
 {
     color: #7f89ea;
@@ -624,3 +626,4 @@ h1.rest
 {
     color: #656ec8;
 }
+*/
