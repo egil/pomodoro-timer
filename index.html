@@ -1,10 +1,5 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
-<!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,10 +7,9 @@
     <meta name="description" content="A Pomodoro timer build in pure HTML and JavaScript, very lightweight and configurable. Perfect for keeping track of your Pomodoros.">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/libs/modernizr.custom.36951.js"></script>
 </head>
 <body tabindex="0">
-    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+    <!--[if lt IE 9]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this app. This site app does not work in your browser!</p><![endif]-->
     <div id="container">
         <header>
             <h1>Pomodoro Timer</h1>
@@ -27,7 +21,7 @@
             <fieldset>
                 <legend>Options</legend>
                 <div>
-                    <label for="work"><span>Work:</span> <input id="work" type="number" min="20" max="50" value="25" step="5" autocomplete="true"/> minutes</label>                    
+                    <label for="work"><span>Work:</span> <input id="work" type="number" min="20" max="50" value="25" step="5" autocomplete="true"/> minutes</label>
                 </div>
                 <div>
                     <label for="break"><span>Break:</span> <input id="break" type="number" min="1" max="15" value="5" step="1" autocomplete="true" /> minutes</label>
@@ -45,7 +39,7 @@
     <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/libs/jquery-ui-1.7.2.min.js"><\/script>')</script>
-    
+
     <!-- scripts concatenated and minified via ant build script-->
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
