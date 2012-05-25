@@ -4,7 +4,7 @@
     var timerElm = $('#timer'),
         stateElm = $('#state .value'),
         pomoCountElm = $('#pomodoro-count .value'),
-        notifySound = new Audio("/resources/beep1.wav"),
+        notifySound = new Audio("/resources/notify.wav"),
         state = {},
         countdown,
         updateState,
@@ -19,7 +19,7 @@
         timeoutId: undefined
     };
 
-    setTarget = function () {        
+    setTarget = function () {
         state.time = state.target = $('#' + state.type).val() * 60;
     };
 
