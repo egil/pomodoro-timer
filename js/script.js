@@ -76,7 +76,7 @@
         }
 
         // play sound when ever state is changed
-        if (!userAction) {
+        if (!userAction && Modernizr.audio.wav != '') {
             notifySound.play();
         }
 
